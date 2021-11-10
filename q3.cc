@@ -21,7 +21,11 @@ void Method1(){
     for(int iter=0; iter<100; iter++){
 
        // TODO: Matrix-vector product
-
+       for(int i = 0; i <SIZE; i++){
+			for(int j =0;j <SIZE;j++){
+			matrix[i*1000+j] * vector[i];
+			}
+       }
     }
     clock_t end = clock();
     std::cout << "Time taken method 1: " << double(end - begin) / CLOCKS_PER_SEC / 100 << std::endl;
@@ -45,7 +49,11 @@ void Method2(){
     for(int iter=0; iter<100; iter++){
 
         // TODO: Matrix-vector product
-
+       for(int i = 0; i <SIZE; i++){
+			for(int j =0;j <SIZE;j++){
+			matrix[i*1000+j] * vector[i];
+			}
+       }
     }
     clock_t end = clock();
     std::cout << "Time taken method 2: " << double(end - begin) / CLOCKS_PER_SEC / 100 << std::endl;
@@ -67,6 +75,11 @@ void Method3(){
     for(int iter=0; iter<100; iter++){
 
         // TODO: Matrix-vector product
+        for(int i = 0; i<SIZE; i++){
+		 	for(int j =0;j<SIZE; j++){
+		 	matrix[i][j] * vector[i];
+		 	}
+        }
 
     }
     clock_t end = clock();
@@ -79,7 +92,11 @@ int main()
     Method2();
     Method3();
     // TODO: Comment on your results and reasoning here
-    // ...
+    printf("\nBy running q3 few times, the fastest one is Method2\n\
+follow by Method1 and Method3 is the slowest one.\n\
+the reason for that should be c use row major, matrix\n\
+list of row, the memory for row is continuous which will\n\
+be faster to access.\n");
     return 0;
 }
 
